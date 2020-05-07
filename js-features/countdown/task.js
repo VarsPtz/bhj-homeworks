@@ -26,6 +26,11 @@ function countdownTimer() {
     } else {
       clearInterval(timerInterval);
       alert("Вы победили в конкурсе!");
+
+      //task 1.3 download file
+      location.assign(
+        "https://wdho.ru/9srL?pt=zso5%2BMmSAJLdUf5nlfBVamK3NW9QjE2VDtqE1xP7cY0%3D"
+      );
     }
 }
 
