@@ -13,7 +13,7 @@ targetImg.onclick = function () {
 
  let currentTime = Date.now();
 
- if (startTime > 0) {
+ if (startTime) {
   let timeDifference = (currentTime - startTime) / 1000;
   clickerSpeed.textContent = (1 / timeDifference).toFixed(2);  
  }
