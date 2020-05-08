@@ -9,15 +9,17 @@ let startTime = Date.now();
 targetImg.onclick = function () { 
  
  counterOfClicks.textContent++;
+
+ let currentTime = Date.now();
+ let timeDifference = (currentTime - startTime) / 1000;
+
+ clickerSpeed.textContent = (
+   +counterOfClicks.textContent / timeDifference
+ ).toFixed(2);
  
  targetImg.width = 300;
  setTimeout(function() {
   targetImg.width = 200;
- }, 100);
-
- let currentTime = Date.now(); 
- let timeDifference = (currentTime - startTime) / 1000;
- 
- clickerSpeed.textContent = (+counterOfClicks.textContent / timeDifference).toFixed(2);
+ }, 100); 
 
 }
