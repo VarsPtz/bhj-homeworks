@@ -4,18 +4,21 @@ const targetImg = document.getElementById("cookie");
 const counterOfClicks = document.getElementById("clicker__counter");
 const clickerSpeed = document.getElementById("clicker__speed");
 
-let startTime = Date.now();
+// let startTime = Date.now();
+let startTime = 0;
 
 targetImg.onclick = function () { 
  
  counterOfClicks.textContent++;
 
  let currentTime = Date.now();
- let timeDifference = (currentTime - startTime) / 1000;
 
- clickerSpeed.textContent = (
-   +counterOfClicks.textContent / timeDifference
- ).toFixed(2);
+ if (startTime > 0) {
+  let timeDifference = (currentTime - startTime) / 1000;
+  clickerSpeed.textContent = (1 / timeDifference).toFixed(2);  
+ }
+ 
+ startTime = currentTime;
  
  targetImg.width = 300;
  setTimeout(function() {
