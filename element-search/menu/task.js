@@ -1,6 +1,7 @@
 const mainMenuItems = document.querySelectorAll("ul.menu_main > li.menu__item > a.menu__link");
 
-Array.from(mainMenuItems).forEach(e => { 
+Array.from(mainMenuItems).forEach(e => {
+
  e.addEventListener("click", (event) => {
   
   event.preventDefault();
@@ -18,5 +19,7 @@ Array.from(mainMenuItems).forEach(e => {
   if (menuActive.length != 0) {
     menuActive[0].classList.toggle("menu_active");
   } 
- }); 
+
+ });
+
 });
