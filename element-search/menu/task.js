@@ -22,8 +22,7 @@ Array.from(mainMenuItems).forEach(e => {
     if (menuActive.length != 0) {
       menuActive[0].classList.remove("menu_active");
     }
-
-    return false;
+    
   } else {
     location.href=e.href;
   }
