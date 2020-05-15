@@ -8,17 +8,25 @@ Array.from(mainMenuItems).forEach(e => {
   
   let menuActive = document.querySelectorAll(
     "ul.menu.menu_main > li.menu__item > ul.menu.menu_sub.menu_active"
-  );
-  
-  if (e.closest(".menu__item").querySelector("ul.menu.menu_sub")) {
-   e.closest(".menu__item").querySelector("ul.menu.menu_sub").classList.toggle("menu_active");  
+  );  
+
+  if (menuActive.length != 0) {
+    menuActive[0].classList.remove("menu_active");
+  } 
+
+  console.log(menuActive.length);
+
+  if (e.closest(".menu__item").querySelector("ul.menu.menu_sub")) { 
+    e.closest(".menu__item").querySelector("ul.menu.menu_sub").classList.toggle("menu_active"); 
+    
+    if (menuActive.length != 0) {
+      menuActive[0].classList.remove("menu_active");
+    }
+
+    return false;
   } else {
     location.href=e.href;
   }
-
-  if (menuActive.length != 0) {
-    menuActive[0].classList.toggle("menu_active");
-  } 
 
  });
 
