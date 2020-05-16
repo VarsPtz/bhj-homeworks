@@ -12,10 +12,8 @@ Array.from(mainMenuItems).forEach(e => {
 
   if (menuActive.length != 0) {
     menuActive[0].classList.remove("menu_active");
-  } 
-
-  console.log(menuActive.length);
-
+  }
+  
   if (e.closest(".menu__item").querySelector("ul.menu.menu_sub")) { 
     e.closest(".menu__item").querySelector("ul.menu.menu_sub").classList.toggle("menu_active"); 
     
