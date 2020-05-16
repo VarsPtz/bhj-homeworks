@@ -1,13 +1,17 @@
-.dropdown {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  font-family: Helvetica;
-  font-weight: 300;
+.dropdown-wrapper {
+  display: flex;
 }
 
-.dropdown__value {
+.dropdown {  
+  list-style-type: none;
+  padding: 0;
+  margin: 0 20px 0 0;
+  position: relative;
+  font-family: Helvetica;
+  font-weight: 300;  
+}
+
+.dropdown__value {  
   color: #fff;
   background: gray;
   box-sizing: border-box;
