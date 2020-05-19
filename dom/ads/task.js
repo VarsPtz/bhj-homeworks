@@ -5,9 +5,10 @@ const rotators = Array.from(document.getElementsByClassName("rotator"));
 rotators.forEach(rotator => {
 
   const childrenItems = rotator.children;
+  const childrenItemsLength = childrenItems.length;
   let rotatorCounter = 1;
   let rotatorSpeed = 1000;
-  let childrenItemsLength = childrenItems.length;
+  
 
   function advertizingRotator() {
 
