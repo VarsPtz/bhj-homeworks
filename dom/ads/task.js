@@ -18,7 +18,7 @@ rotators.forEach(rotator => {
 
     childrenItems[rotatorCounter].classList.add("rotator__case_active");
     let rotatorColor = childrenItems[rotatorCounter].getAttribute("data-color");
-    childrenItems[rotatorCounter].style.color = rotatorColor;//`${rotatorColor}`;
+    childrenItems[rotatorCounter].style.color = rotatorColor;
     rotatorSpeed = childrenItems[rotatorCounter].getAttribute("data-speed");
 
     if (rotatorCounter < childrenItemsLength - 1) {
