@@ -102,4 +102,4 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'));fasd
+new Game(document.getElementById('game'));
