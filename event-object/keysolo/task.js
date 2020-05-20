@@ -1,9 +1,11 @@
+"use strict";
 class Game {
   constructor(container) {
     this.container = container;
     this.wordElement = container.querySelector('.word');
     this.winsElement = container.querySelector('.status__wins');
     this.lossElement = container.querySelector('.status__loss');
+    this.timerElement = container.querySelector('.status__timer');
 
     this.reset();
 
@@ -14,6 +16,8 @@ class Game {
     this.setNewWord();
     this.winsElement.textContent = 0;
     this.lossElement.textContent = 0;
+    this.timerElement.textContent = this.wordElement.textContent.length;
+    // this.timerAttempt();
   }
 
   registerEvents() {
@@ -24,11 +28,24 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
+    
+    document.addEventListener("keypress", (event) => {      
+      if (this.currentSymbol.textContent.toLowerCase() == event.key.toLowerCase()) {
+         if (+this.timerElement.textContent > 0) {
+           this.success();
+         } else {
+           this.fail();
+         }
+      } else {
+        this.fail();
+      }
+    });
   }
 
-  success() {
+  success() {    
     this.currentSymbol.classList.add('symbol_correct');
     this.currentSymbol = this.currentSymbol.nextElementSibling;
+    
     if (this.currentSymbol !== null) {
       return;
     }
@@ -37,7 +54,7 @@ class Game {
       alert('Победа!');
       this.reset();
     }
-    this.setNewWord();
+    this.setNewWord();        
   }
 
   fail() {
@@ -45,7 +62,7 @@ class Game {
       alert('Вы проиграли!');
       this.reset();
     }
-    this.setNewWord();
+    this.setNewWord();    
   }
 
   setNewWord() {
@@ -82,9 +99,24 @@ class Game {
       .join('');
     this.wordElement.innerHTML = html;
 
-    this.currentSymbol = this.wordElement.querySelector('.symbol_current');
+    this.currentSymbol = this.wordElement.querySelector('.symbol_current');    
   }
+
+  // timerAttempt() {    
+
+  //   let count = +this.timerElement.textContent;
+     
+  //   let timerInterval = setInterval(() => {
+  //     --count;
+  //     this.timerElement.textContent = count;
+  //     if (count == 0) {
+  //       clearInterval(timerInterval);
+  //     }
+  //   }, 1000);
+
+  // }
+
 }
 
-new Game(document.getElementById('game'))
+new Game(document.getElementById('game'));
 
