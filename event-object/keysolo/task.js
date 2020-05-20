@@ -16,8 +16,7 @@ class Game {
     this.setNewWord();
     this.winsElement.textContent = 0;
     this.lossElement.textContent = 0;
-    this.timerElement.textContent = this.wordElement.textContent.length;
-    // this.timerAttempt();
+    this.timerElement.textContent = this.wordElement.textContent.length;    
   }
 
   registerEvents() {
@@ -101,22 +100,6 @@ class Game {
 
     this.currentSymbol = this.wordElement.querySelector('.symbol_current');    
   }
-
-  // timerAttempt() {    
-
-  //   let count = +this.timerElement.textContent;
-     
-  //   let timerInterval = setInterval(() => {
-  //     --count;
-  //     this.timerElement.textContent = count;
-  //     if (count == 0) {
-  //       clearInterval(timerInterval);
-  //     }
-  //   }, 1000);
-
-  // }
-
 }
 
-new Game(document.getElementById('game'));
-
+new Game(document.getElementById('game'));fasd
