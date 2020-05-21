@@ -68,14 +68,3 @@ function returnAccidentalMessage() {
 
  return answersRobot[accidentalIndex];
 }
-
-function pushMessage(message) {
- chatWidgetMessages.innerHTML += `
-      <div class="message">
-        <div class="message__time">${getDate()}</div>
-        <div class="message__text">
-          ${message}
-        </div>
-      </div>
-  `;
-}
