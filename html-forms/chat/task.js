@@ -11,25 +11,10 @@ chatWidget.addEventListener("click", () => {
 
 chatWidgetInput.addEventListener("keypress", event => {
   if (event.which == 13 || event.keyCode == 13) {   
-   if (notEmpty(event.target.value)) {
-    chatWidgetMessages.innerHTML += `
-      <div class="message">
-        <div class="message__time">${getDate()}</div>
-        <div class="message__text">
-          ${event.target.value}
-        </div>
-      </div>
-    `;
-    setTimeout(() => {
-     chatWidgetMessages.innerHTML += `
-      <div class="message">
-        <div class="message__time">${getDate()}</div>
-        <div class="message__text">
-          ${returnAccidentalMessage()}
-        </div>
-      </div>
-    `;
-     
+   if (notEmpty(event.target.value)) {    
+     pushMessage(event.target.value);
+     setTimeout(() => {    
+     pushMessage(returnAccidentalMessage());     
     }, 1000);
    }
   }
@@ -65,4 +50,15 @@ function returnAccidentalMessage() {
  const accidentalIndex = Math.floor(Math.random() * answersRobot.length);
 
  return answersRobot[accidentalIndex];
+}
+
+function pushMessage(message) {
+ chatWidgetMessages.innerHTML += `
+      <div class="message">
+        <div class="message__time">${getDate()}</div>
+        <div class="message__text">
+          ${message}
+        </div>
+      </div>
+  `;
 }
