@@ -1,7 +1,7 @@
-const checkboxes = document.querySelectorAll(".interest__check");
+const checkboxes = Array.from(document.querySelectorAll(".interest__check"));
 
-for (let checkbox of checkboxes) {
-  checkbox.addEventListener("click", (e) => {
+//for (let checkbox of checkboxes) {
+checkboxes.forEach(checkbox => checkbox.addEventListener("click", () => {
     let parent = checkbox.closest("li");
     let children = parent.querySelectorAll(
       "ul.interests_active input.interest__check"
@@ -13,5 +13,5 @@ for (let checkbox of checkboxes) {
         child.checked = false;
       }
     }
-  });
-}
+  })
+);
