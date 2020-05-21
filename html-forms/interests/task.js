@@ -1,6 +1,5 @@
 const checkboxes = Array.from(document.querySelectorAll(".interest__check"));
 
-//for (let checkbox of checkboxes) {
 checkboxes.forEach(checkbox => checkbox.addEventListener("click", () => {
     let parent = checkbox.closest("li");
     let children = parent.querySelectorAll(
