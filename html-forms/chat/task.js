@@ -20,7 +20,9 @@ chatWidgetInput.addEventListener("keypress", event => {
           ${event.target.value}
         </div>
       </div>
-     `;   
+     `;
+     
+     event.target.value = "";
      
      setTimeout(() => {    
       chatWidgetMessages.innerHTML += `
