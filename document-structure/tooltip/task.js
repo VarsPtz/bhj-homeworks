@@ -8,7 +8,7 @@ let tooltipsCollection;
 
 function tooltipsCreator() {
  Array.from(hasTooltip).forEach(tooltip => {
-  tooltip.insertAdjacentHTML("afterEnd", `<div class='tooltip' data-position="left">${tooltip.title}</div>`);
+  tooltip.insertAdjacentHTML("afterEnd", `<div class='tooltip' data-position="bottom">${tooltip.title}</div>`);
  }); 
 
  tooltipsCollection = document.querySelectorAll(".tooltip");
