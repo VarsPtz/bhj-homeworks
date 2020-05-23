@@ -4,6 +4,10 @@ body {
 
 .tasks__control {
   display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
 .tasks__input {
   flex-grow: 1;
@@ -26,6 +30,9 @@ body {
 }
 
 .tasks__list {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
 }
 
